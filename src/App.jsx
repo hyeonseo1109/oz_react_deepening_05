@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 
+//보다가 잘 모르겠어서 답지 보면서 했습니다 ㅠ.ㅠ...
+
 const App = () => {
     const [cart, setCart] = useState([]);
 
@@ -10,6 +12,10 @@ const App = () => {
         // 상품은 배열객체로 이루어져 있습니다.
         // 카트에 상품이 8개 이상이면 alert를 띄워
         // 더 이상 상품을 추가할 수 없다고 알려주세요.
+        if ( cart.length > 8 ) {
+            return alert ('8개를 초과할 수 없습니다.');
+        }
+        setCart( [...cart, product]);
     };
 
     return (
